@@ -59,6 +59,9 @@ jobs:
           HUGO_ENVIRONMENT: production
         run: |
           hugo \
+            --source exampleSite \
+            --themesDir ../.. \
+            --destination ../public \
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/"
       - name: Upload artifact
